@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', function (){
+    return redirect('/home');
+});
+
+Route::get('/home', 'HomeController@index');
 
 Route::resource('/catalogo', 'ProductController');
 
