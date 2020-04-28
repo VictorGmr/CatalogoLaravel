@@ -1,4 +1,4 @@
-@extends('template.template')
+@extends('layouts.app')
 
 @section('title')
     Criar novo produto

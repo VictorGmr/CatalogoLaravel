@@ -1,10 +1,12 @@
-@extends('template.template')
+@extends('layouts.app')
 
 @section('title')
     Todos os produtos
 @endsection()
 
 @section('content')
+
+    <h1>Produtos</h1>
 
     <ul>
         @foreach($produto as $prod)
