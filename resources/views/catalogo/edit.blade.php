@@ -5,18 +5,28 @@
 @endsection
 
 @section('content')
-    <form action="/catalogo/{{$produto->id}}" enctype="multipart/form-data" method="POST">
-        @csrf
-        @method('PUT')
-        <label for="nome">Nome do produto:</label>
-        <input type="text" name="nome" id="nome" value="{{$produto->nome}}">
+
+    <div class="card" style="padding: 30px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+        <form action="/catalogo/{{$produto->id}}" enctype="multipart/form-data" method="POST">
+            @csrf
+            @method('PUT')
+            <div class="form-group">
+                <label for="nome">Nome do produto:</label>
+                <input class="form-control"type="text" name="nome" id="nome" value="{{$produto->nome}}">
+            </div>
+            
+            <div class="form-group">
+                <label for="preco">Preço do produto:</label>
+                <input class="form-control" type="number" min="1" step="any" name="preco" id="preco" value="{{$produto->preco}}">
+            </div>
+            
+            <div class="form-group">
+                <label for="foto">Selecione a imagem do produto:</label>
+                <input class="form-control-file" type="file" name="foto" id="foto">
+            </div>
+
     
-        <label for="preco">Preço do produto:</label>
-        <input type="number" name="preco" id="preco" value="{{$produto->preco}}">
-
-        <label for="foto">Selecione a imagem do produto:</label>
-        <input type="file" name="foto" id="foto">
-
-        <input type="submit" value="Editar">
-    </form>
+            <button class="btn btn-primary" type="submit">Editar</button>
+        </form>
+    </div>
 @endsection()

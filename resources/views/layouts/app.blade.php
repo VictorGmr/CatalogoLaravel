@@ -53,6 +53,9 @@
         </div>
     </nav>
 
-    @yield('content')
+    <div style="width:80%; margin:auto; margin-top: 20px; overflow:hidden;">
+        @yield('content')
+    </div>
+    
 </body>
 </html>

@@ -15,7 +15,7 @@
             
             <div class="form-group">
                 <label for="preco">Preço do produto:</label>
-                <input class="form-control" type="number" name="preco" id="preco">
+                <input class="form-control" type="number" min="1" step="any" name="preco" id="preco">
             </div>
             
             <div class="form-group">
