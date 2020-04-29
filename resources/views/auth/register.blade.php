@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -66,6 +66,8 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+
+                                <a href="javascript:history.back()"><button type="button" class="btn btn-primary">Back</button></a>
                             </div>
                         </div>
                     </form>

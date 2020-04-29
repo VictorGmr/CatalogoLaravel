@@ -41,7 +41,7 @@
             
         @else
         <div style="text-align:center;">
-            <a href="/catalogo"><button class="btn btn-primary">Back</button></a>
+            <a href="javascript:history.back()"><button type="button" class="btn btn-primary">Back</button></a>
         </div>
             
         @endif

@@ -26,7 +26,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('catalogo.create');
+        if(Auth::check()){
+            return view('catalogo.create');
+        }else{
+            return redirect('/catalogo');
+        }
+        
     }
 
     /**
@@ -37,19 +42,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $produto = new Produto();
+        if(Auth::check()){
+            $produto = new Produto();
 
-        $produto->nome = $request->nome;
-        $produto->preco = $request->preco;
-        
-        if($produto->save()){
-            if($request->hasFile('foto')){
-                $imagem = $request->file('foto');
-                $nomedoarquivo = md5($produto->id);
-                $request->file('foto')->move(public_path('img/produtos/'), $nomedoarquivo);
+            $produto->nome = $request->nome;
+            $produto->preco = $request->preco;
+            
+            if($produto->save()){
+                if($request->hasFile('foto')){
+                    $imagem = $request->file('foto');
+                    $nomedoarquivo = md5($produto->id);
+                    $request->file('foto')->move(public_path('img/produtos/'), $nomedoarquivo);
+                }
+                return redirect('catalogo');
             }
-            return redirect('catalogo');
+        }else{
+            return redirect('/catalogo');
         }
+
+        
     }
 
     /**
@@ -72,8 +83,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $produto = Produto::find($id);
-        return view('catalogo.edit', array('produto' => $produto));
+        if(Auth::check()){
+            $produto = Produto::find($id);
+            return view('catalogo.edit', array('produto' => $produto));
+        }else{
+            return redirect('/catalogo');
+        }
+        
     }
 
     /**
@@ -85,19 +101,25 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $produto = Produto::find($id);
-        $produto->nome = $request->nome;
-        $produto->preco = $request->preco;
+        if(Auth::check()){
+            $produto = Produto::find($id);
+            $produto->nome = $request->nome;
+            $produto->preco = $request->preco;
 
-        if($request->hasFile('foto')){
-            $imagem = $request->file('foto');
-            $nomedoarquivo = md5($produto->id);
-            $request->file('foto')->move(public_path('img/produtos/'), $nomedoarquivo);
+            if($request->hasFile('foto')){
+                $imagem = $request->file('foto');
+                $nomedoarquivo = md5($produto->id);
+                $request->file('foto')->move(public_path('img/produtos/'), $nomedoarquivo);
+            }
+
+            if($produto->save()){
+                return redirect('catalogo/'.$produto->id);
+            }
+        }else{
+            return redirect('/catalogo');
         }
 
-        if($produto->save()){
-            return redirect('catalogo/'.$produto->id);
-        }
+        
     }
 
     /**
@@ -108,10 +130,16 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $produto = Produto::find($id);
-        $produto->delete();
+        if(Auth::check()){
+            $produto = Produto::find($id);
+            $produto->delete();
 
-        return redirect('catalogo');
+            return redirect('catalogo');
+        }else{
+            return redirect('/catalogo');
+        }
+
+        
     }
 
 

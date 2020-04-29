@@ -12,9 +12,9 @@
         @csrf
         <div class="input-group">
             @if($busca == null)
-                <input style="margin-right: 10px;" type="text" class="form-control" name="busca" placeholder="Buscar" required>
+                <input style="margin-right: 10px;" type="text" class="form-control" name="busca" placeholder="Buscar">
             @else
-                <input style="margin-right: 10px;" type="text" class="form-control" name="busca" value="{{$busca}}" required>
+                <input style="margin-right: 10px;" type="text" class="form-control" name="busca" value="{{$busca}}">
             @endif
             <button type="submit" class="btn btn-primary">Search</button>
         </div>

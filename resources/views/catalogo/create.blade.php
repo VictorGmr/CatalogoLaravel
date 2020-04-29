@@ -25,7 +25,7 @@
 
     
             <button class="btn btn-primary" type="submit">Add</button>
-            <a href="/catalogo"><button type="button" class="btn btn-primary">Back</button></a>
+            <a href="javascript:history.back()"><button type="button" class="btn btn-primary">Back</button></a>
         </form>
     </div>
     
