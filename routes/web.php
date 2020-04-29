@@ -17,6 +17,8 @@ Route::get('/', function (){
     return redirect('/home');
 });
 
+Route::post('catalogo/buscar', 'ProductController@buscar');
+
 Route::get('/home', 'HomeController@index');
 
 Route::resource('/catalogo', 'ProductController');

@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $produto = Produto::paginate(10);
-        return view('catalogo.index', array('produto' => $produto));
+        return view('catalogo.index', array('produto' => $produto, 'busca'=>null));
     }
 
     /**
@@ -112,5 +112,13 @@ class ProductController extends Controller
         $produto->delete();
 
         return redirect('catalogo');
+    }
+
+
+    public function buscar(Request $request){
+
+        $produto = Produto::where('nome', 'LIKE', '%'.$request->input('busca').'%')->paginate(10);
+
+        return view('catalogo.index', array('produto' => $produto, 'busca'=>$request->input('busca')));
     }
 }
