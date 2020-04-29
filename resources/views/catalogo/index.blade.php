@@ -11,8 +11,11 @@
     <form style="margin-bottom: 20px;" action="/catalogo/buscar" method="POST">
         @csrf
         <div class="input-group">
-            <input style="margin-right: 10px;" type="text" class="form-control" name="busca" placeholder="Buscar" required>
-
+            @if($busca == null)
+                <input style="margin-right: 10px;" type="text" class="form-control" name="busca" placeholder="Buscar" required>
+            @else
+                <input style="margin-right: 10px;" type="text" class="form-control" name="busca" value="{{$busca}}" required>
+            @endif
             <button type="submit" class="btn btn-primary">Search</button>
         </div>
         
