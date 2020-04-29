@@ -42,7 +42,7 @@
             @if(file_exists('./img/produtos/'.md5($prod->id)))
                 <div class="card" style="margin-bottom:10px; padding: 20px; display:inline-block;"><a href="/catalogo/{{$prod->id}}"><img width="300" height="300" src="{{asset('img/produtos/'.md5($prod->id))}}"></a><br />{{$prod->nome}}</div>   
             @else
-                <div class="card" style="margin-bottom: 10px; padding: 20px;display:inline-block;"><a href="/catalogo/{{$prod->id}}"><img width="300" height="300" src="{{asset('img/produtos/no-image.png')}}"></a><br />{{$prod->nome}}</div>
+                <div class="card" style="margin-bottom: 10px; padding: 20px;display:inline-block;"><a href="/catalogo/{{$prod->id}}"><img width="300" height="300" src="{{asset('img/no-image.png')}}"></a><br />{{$prod->nome}}</div>
             @endif 
         @endforeach
        

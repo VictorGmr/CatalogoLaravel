@@ -17,7 +17,7 @@
             </div>
         @else
         <div>
-                <img src="{{asset('img/produtos/no-image.png')}}" width="500" height="500">
+                <img src="{{asset('img/no-image.png')}}" width="500" height="500">
             </div>
         @endif
         
