@@ -9,22 +9,23 @@
         <form action="/catalogo" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nome">Nome do produto:</label>
+                <label for="nome">Name of the product:</label>
                 <input class="form-control"type="text" name="nome" id="nome" required>
             </div>
             
             <div class="form-group">
-                <label for="preco">Preço do produto:</label>
+                <label for="preco">Price of the product:</label>
                 <input class="form-control" type="number" min="1" step="any" name="preco" id="preco" required>
             </div>
             
             <div class="form-group">
-                <label for="foto">Selecione a imagem do produto:</label>
+                <label for="foto">Select a product image:</label>
                 <input class="form-control-file" type="file" name="foto" id="foto">
             </div>
 
     
-            <button class="btn btn-primary" type="submit">Adicionar</button>
+            <button class="btn btn-primary" type="submit">Add</button>
+            <a href="/catalogo"><button type="button" class="btn btn-primary">Back</button></a>
         </form>
     </div>
     

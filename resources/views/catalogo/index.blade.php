@@ -13,7 +13,7 @@
         <div class="input-group">
             <input style="margin-right: 10px;" type="text" class="form-control" name="busca" placeholder="Buscar" required>
 
-            <button type="submit" class="btn btn-primary">Buscar</button>
+            <button type="submit" class="btn btn-primary">Search</button>
         </div>
         
     </form>
@@ -50,7 +50,7 @@
     <div>
         <div style="margin-bottom: 10px">
             @if(Auth::check())
-                <a href="/catalogo/create"><button class="btn btn-primary">Adicionar</button></a>
+                <a href="/catalogo/create"><button class="btn btn-primary">Add</button></a>
             @endif
         </div>
 
