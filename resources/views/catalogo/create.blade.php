@@ -10,12 +10,12 @@
             @csrf
             <div class="form-group">
                 <label for="nome">Nome do produto:</label>
-                <input class="form-control"type="text" name="nome" id="nome">
+                <input class="form-control"type="text" name="nome" id="nome" required>
             </div>
             
             <div class="form-group">
                 <label for="preco">Preço do produto:</label>
-                <input class="form-control" type="number" min="1" step="any" name="preco" id="preco">
+                <input class="form-control" type="number" min="1" step="any" name="preco" id="preco" required>
             </div>
             
             <div class="form-group">

@@ -12,12 +12,12 @@
             @method('PUT')
             <div class="form-group">
                 <label for="nome">Nome do produto:</label>
-                <input class="form-control"type="text" name="nome" id="nome" value="{{$produto->nome}}">
+                <input class="form-control"type="text" name="nome" id="nome" value="{{$produto->nome}}" required>
             </div>
             
             <div class="form-group">
                 <label for="preco">Preço do produto:</label>
-                <input class="form-control" type="number" min="1" step="any" name="preco" id="preco" value="{{$produto->preco}}">
+                <input class="form-control" type="number" min="1" step="any" name="preco" id="preco" value="{{$produto->preco}}" required>
             </div>
             
             <div class="form-group">
