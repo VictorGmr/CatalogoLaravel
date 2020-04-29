@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Produto por ID
+    Product info
 @endsection()
 
 @section('content')

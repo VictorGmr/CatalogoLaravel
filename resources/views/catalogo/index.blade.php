@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('title')
-    Todos os produtos
+    All the products
 @endsection()
 
 @section('content')
 
-    <h1>Produtos</h1>
+    <h1>Products</h1>
 
     <form style="margin-bottom: 20px;" action="/catalogo/buscar" method="POST">
         @csrf
         <div class="input-group">
             @if($busca == null)
-                <input style="margin-right: 10px;" type="text" class="form-control" name="busca" placeholder="Buscar">
+                <input style="margin-right: 10px;" type="text" class="form-control" name="busca" placeholder="Search">
             @else
                 <input style="margin-right: 10px;" type="text" class="form-control" name="busca" value="{{$busca}}">
             @endif
