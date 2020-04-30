@@ -10,7 +10,7 @@
             @csrf
             <div class="form-group">
                 <label for="nome">Name of the product:</label>
-                <input class="form-control"type="text" name="nome" id="nome" required>
+                <input class="form-control"type="text" name="nome" id="nome" maxlength="20" required>
             </div>
             
             <div class="form-group">
